@@ -35,7 +35,8 @@ code {
   height: 600px;
 }
 
-#root::-webkit-scrollbar{
+#root::-webkit-scrollbar,
+tbody::-webkit-scrollbar {
   width: 0;
 }
 
@@ -111,6 +112,53 @@ form button {
   letter-spacing: 1px;
   font-weight: 500;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  margin: 25px 0 45px 0;
+}
+
+.content-table thead th {
+  color: #fff;
+  background: #9b59b6;
+  text-align: left;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody {
+  display: block;
+  max-height: 150px;
+  overflow: auto;
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #9b59b6;
 }
 
 @media (max-width: 584px) {
