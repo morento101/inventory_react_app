@@ -1,13 +1,126 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  height: 600px;
+}
+
+#root::-webkit-scrollbar{
+  width: 0;
+}
+
+#root .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+#root .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+#root form .search,
+#root form .add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .search .form-group,
+form .add .form-group {
+  width: calc(100% / 2 - 20px);
+  margin: 20px 0 12px 0;
+  margin-bottom: 15px;
+}
+
+form .search .form-group label,
+form .add .form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+form .search .form-group input,
+form .add .form-group input {
+  display: block;
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3 ease;
+}
+
+form .search .form-group input:focus,
+form .add .form-group input:focus {
+  border-color: #9b59b6;
+}
+
+form .button {
+  height: 45px;
+  margin: 25px 0 45px 0;
+}
+
+form button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .search .form-group,
+  form .add .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }

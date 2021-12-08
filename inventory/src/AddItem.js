@@ -1,25 +1,24 @@
 import { useState } from "react";
 
-function SearchBar(props) {
+function AddItem(props) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
   const [brand, setBrand] = useState("");
 
-  function SearchButtonPressed() {
-    props.updateSearchParams({
-      name: name,
-      price: price,
-      type: type,
-      brand: brand,
-    });
-  }
+  const addItemButtonPressed = () => {
+    props.addItem({ name: name, price: price, type: type, brand: brand });
+    setName("");
+    setPrice("");
+    setType("");
+    setBrand("");
+  };
 
   return (
     <div>
-      <div className="title">Search for an item</div>
+      <div className="title">Add an item</div>
       <form>
-        <div className="search">
+        <div className="add">
           <div className="form-group">
             <label htmlFor="name-filed">Name: </label>
             <input
@@ -31,7 +30,7 @@ function SearchBar(props) {
             ></input>
           </div>
           <div className="form-group">
-            <label htmlFor="price-filed">Max Price: </label>
+            <label htmlFor="price-filed">Price: </label>
             <input
               id="price-filed"
               type="text"
@@ -62,8 +61,8 @@ function SearchBar(props) {
           </div>
         </div>
         <div className="button">
-          <button type="button" onClick={SearchButtonPressed}>
-            Search
+          <button type="button" onClick={addItemButtonPressed}>
+            Add
           </button>
         </div>
       </form>
@@ -71,4 +70,4 @@ function SearchBar(props) {
   );
 }
 
-export default SearchBar;
+export default AddItem;
