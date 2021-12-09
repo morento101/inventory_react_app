@@ -2,14 +2,14 @@ import { useState } from "react";
 
 function SearchBar(props) {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [type, setType] = useState("");
   const [brand, setBrand] = useState("");
 
   function SearchButtonPressed() {
     props.updateSearchParams({
       name: name,
-      price: price,
+      price: Number(price),
       type: type,
       brand: brand,
     });
@@ -34,7 +34,7 @@ function SearchBar(props) {
             <label htmlFor="price-filed">Max Price: </label>
             <input
               id="price-filed"
-              type="text"
+              type="number"
               placeholder="Enter Price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}

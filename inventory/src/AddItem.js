@@ -2,14 +2,14 @@ import { useState } from "react";
 
 function AddItem(props) {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [type, setType] = useState("");
   const [brand, setBrand] = useState("");
 
   const addItemButtonPressed = () => {
-    props.addItem({ name: name, price: price, type: type, brand: brand });
+    props.addItem({ name: name, price: Number(price), type: type, brand: brand });
     setName("");
-    setPrice("");
+    setPrice(0);
     setType("");
     setBrand("");
   };
@@ -33,7 +33,7 @@ function AddItem(props) {
             <label htmlFor="price-filed">Price: </label>
             <input
               id="price-filed"
-              type="text"
+              type="number"
               placeholder="Enter Price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
