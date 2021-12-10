@@ -61,12 +61,12 @@ tbody::-webkit-scrollbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 0 12px 0;
+  margin: 0px 0 12px 0;
 }
 
 form .search .form-group,
 form .add .form-group {
-  width: calc(100% / 2 - 20px);
+  width: calc(100% / 4 - 20px);
   margin: 20px 0 12px 0;
   margin-bottom: 15px;
 }
@@ -102,7 +102,12 @@ form .button {
   margin: 25px 0 45px 0;
 }
 
-form button {
+table button {
+  height: 35px;
+  margin: 5px 0 5px 0;
+}
+
+button {
   width: 100%;
   height: 100%;
   outline: none;
@@ -112,6 +117,7 @@ form button {
   letter-spacing: 1px;
   font-weight: 500;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  cursor: pointer;
 }
 
 .content-table {

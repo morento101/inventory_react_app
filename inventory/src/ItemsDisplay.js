@@ -1,4 +1,4 @@
-function ItemsDispaly(props) {
+function ItemsDispaly({ items, deleteItem }) {
   return (
     <div>
       <div className="title">List of Items</div>
@@ -10,17 +10,25 @@ function ItemsDispaly(props) {
             <th>Type</th>
             <th>Price</th>
             <th>Brand</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          {props.items.map((item) => {
+          {items.map((item) => {
             return (
               <tr>
-                <td>{props.items.indexOf(item) + 1}</td>
+                <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.type}</td>
                 <td>{item.price}</td>
                 <td>{item.brand}</td>
+                <td>
+                  <div className="button">
+                    <button type="button" onClick={() => deleteItem(item)}>
+                      Delete
+                    </button>
+                  </div>
+                </td>
               </tr>
             );
           })}
