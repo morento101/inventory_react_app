@@ -83,7 +83,7 @@ function App() {
   return (
     <div>
       <SearchBar updateSearchParams={updateData} />
-      <ItemsDispaly deleteItem={deleteItem} items={filterData(data["items"])} />
+      <ItemsDispaly deleteItem={deleteItem} data={data} items={filterData(data["items"])} />
       <AddItem addItem={AddItemToData} />
     </div>
   );

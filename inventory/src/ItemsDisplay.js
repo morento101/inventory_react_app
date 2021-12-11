@@ -1,4 +1,14 @@
+import { useRef, useEffect } from 'react'
+
 function ItemsDispaly({ items, deleteItem }) {
+
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    return divRef.current.scrollIntoView({ behavior: 'smooth' });
+  });
+
+
   return (
     <div>
       <div className="title">List of Items</div>
@@ -32,6 +42,7 @@ function ItemsDispaly({ items, deleteItem }) {
               </tr>
             );
           })}
+          <div ref={divRef} />
         </tbody>
       </table>
     </div>
